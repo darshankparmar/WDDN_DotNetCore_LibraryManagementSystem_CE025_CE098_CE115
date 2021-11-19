@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DatabaseLayer.DesignationTable>
+
+@{
+    ViewBag.Title = "Designation - Dashboard";
+}
+
+
+@Html.ActionLink("New Designation", "Create", null, new { @class = "btn btn-success mb-2" })
+<hr />
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Designation List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Designation Title
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Scale)
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Scale)
+                            </td>
+                            <td class="btn-group">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.DesignationID }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.DesignationID }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

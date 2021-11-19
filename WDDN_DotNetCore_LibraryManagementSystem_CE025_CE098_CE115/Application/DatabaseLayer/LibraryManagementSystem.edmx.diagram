@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfa803d1ff7a4dec80449b747553b3e5" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="LibraryDbModel.BookFineTable" Width="1.5" PointX="9.75" PointY="19.875" />
+        <EntityTypeShape EntityType="LibraryDbModel.BookReturnTable" Width="1.5" PointX="12.75" PointY="20" />
+        <EntityTypeShape EntityType="LibraryDbModel.BookTable" Width="1.5" PointX="7.5" PointY="21.75" />
+        <EntityTypeShape EntityType="LibraryDbModel.BookTypeTable" Width="1.5" PointX="5.25" PointY="23.375" />
+        <EntityTypeShape EntityType="LibraryDbModel.DepartmentTable" Width="1.5" PointX="5.25" PointY="30.25" />
+        <EntityTypeShape EntityType="LibraryDbModel.DesignationTable" Width="1.5" PointX="5.25" PointY="27.375" />
+        <EntityTypeShape EntityType="LibraryDbModel.EmployeeTable" Width="1.5" PointX="7.5" PointY="27.75" />
+        <EntityTypeShape EntityType="LibraryDbModel.IssueBookTable" Width="1.5" PointX="12.75" PointY="24.25" />
+        <EntityTypeShape EntityType="LibraryDbModel.PurchaseDetailTable" Width="1.5" PointX="15.75" PointY="24.125" />
+        <EntityTypeShape EntityType="LibraryDbModel.PurchaseTable" Width="1.5" PointX="10.5" PointY="26.25" />
+        <EntityTypeShape EntityType="LibraryDbModel.PurTemDetailsTable" Width="1.5" PointX="9.75" PointY="30.625" />
+        <EntityTypeShape EntityType="LibraryDbModel.SupplierTable" Width="1.5" PointX="5.25" PointY="36.5" />
+        <EntityTypeShape EntityType="LibraryDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDbModel.UserTable" Width="1.5" PointX="3" PointY="16.125" />
+        <EntityTypeShape EntityType="LibraryDbModel.UserTypeTable" Width="1.5" PointX="0.75" PointY="17.375" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookFineTable_BookTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookFineTable_EmployeeTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookFineTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookReturnTable_BookTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookReturnTable_EmployeeTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookReturnTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookTable_BookTypeTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookTable_DepartmentTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_BookTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_IssueBookTable_BookTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_PurchaseDetailTable_BookTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_PurTemDetailsTables_BookTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_DepartmentTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_EmployeeTable_DepartmentTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_DesignationTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_EmployeeTable_DesignationTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_IssueBookTable_EmployeeTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_UserTable_EmployeeTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_IssueBookTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_PurchaseDetailTable_PurchaseTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_PurchaseTable_SupplierTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_PurchaseTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_SupplierTable_UserTable" />
+        <AssociationConnector Association="LibraryDbModel.FK_UserTable_UserTypeTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

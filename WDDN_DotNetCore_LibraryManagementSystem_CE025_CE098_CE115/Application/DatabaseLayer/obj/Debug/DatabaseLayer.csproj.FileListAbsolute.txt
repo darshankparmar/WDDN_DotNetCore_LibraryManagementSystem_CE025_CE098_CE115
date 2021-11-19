@@ -1,0 +1,12 @@
+D:\Library Management\Application\DatabaseLayer\bin\Debug\DatabaseLayer.dll.config
+D:\Library Management\Application\DatabaseLayer\bin\Debug\DatabaseLayer.dll
+D:\Library Management\Application\DatabaseLayer\bin\Debug\DatabaseLayer.pdb
+D:\Library Management\Application\DatabaseLayer\bin\Debug\EntityFramework.dll
+D:\Library Management\Application\DatabaseLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Library Management\Application\DatabaseLayer\bin\Debug\EntityFramework.xml
+D:\Library Management\Application\DatabaseLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Library Management\Application\DatabaseLayer\obj\Debug\DatabaseLayer.csproj.CoreCompileInputs.cache
+D:\Library Management\Application\DatabaseLayer\obj\Debug\DatabaseLayer.dll
+D:\Library Management\Application\DatabaseLayer\obj\Debug\DatabaseLayer.pdb
+D:\Library Management\Application\DatabaseLayer\obj\Debug\DatabaseLayer.csproj.CopyComplete
+D:\Library Management\Application\DatabaseLayer\obj\Debug\DatabaseLayer.csproj.AssemblyReference.cache

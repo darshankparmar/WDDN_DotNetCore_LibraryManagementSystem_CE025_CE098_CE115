@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DatabaseLayer.BookFineTable>
+
+@{
+    ViewBag.Title = "Fine History";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">History</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Book
+                        </th>
+                        <th>
+                            Employee
+                        </th>
+                        <th>
+                            Submit Fine Date
+                        </th>
+                        <th>
+                            No Of Days
+                        </th>
+                        <th>
+                            Fine Per Day
+                        </th>
+                        <th>
+                            Fine Amount
+                        </th>
+                        <th>
+                            Receive Amount
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookTable.BookTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeTable.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FineDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoOfDays)
+                            </td>
+                            <td>
+                                20 INR
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FineAmount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReceiveAmount)
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

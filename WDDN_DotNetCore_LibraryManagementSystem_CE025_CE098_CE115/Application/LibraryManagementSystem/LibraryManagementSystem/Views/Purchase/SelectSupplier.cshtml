@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DatabaseLayer.SupplierTable>
+
+@{
+    ViewBag.Title = "Finilize Purchasing";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+@using (Html.BeginForm("PurchaseConfirm", "Purchase", FormMethod.Post))
+{
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h4 class="font-weight-bold text-primary" style="float:left;">List</h4>
+            <input type="submit" class="btn btn-success" value="Finilize Purchase" style="float:right;" />
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                Supplier
+                            </th>
+                            <th>
+                                Contact No
+                            </th>
+                            <th>
+                                Supplier Email
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupplierName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="chb" name="name @item.SupplierID" />
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    
+        $(".chb").change(function (event) {
+            $(".chb").prop('checked', false);
+            $(this).prop('checked', true);
+        });
+
+    });
+</script>
+

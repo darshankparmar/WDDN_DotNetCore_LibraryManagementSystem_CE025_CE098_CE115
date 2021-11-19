@@ -1,0 +1,559 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<style>
+    .content {
+        min-height: 250px;
+        padding: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .col-xs-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .small-box {
+        border-radius: 2px;
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .box, .small-box {
+        box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    }
+
+    .bg-aqua {
+        background-color: #00c0ef !important;
+        color: #fff !important;
+    }
+
+    .small-box > .inner {
+        padding: 10px;
+    }
+
+    .small-box h3, .small-box p {
+        z-index: 5;
+    }
+
+    .small-box h3 {
+        font-size: 38px;
+        font-weight: 700;
+        margin: 0 15px 10px;
+        white-space: nowrap;
+        padding: 0;
+    }
+
+    .small-box p {
+        font-size: 15px;
+        margin-left: 9px;
+    }
+
+    .small-box .icon {
+        -webkit-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        z-index: 0;
+        @*font-size: 90px;*@
+        color: rgba(0,0,0,.15);
+    }
+
+    .bg-green {
+        background-color: #00a65a !important;
+        color: #fff !important;
+    }
+
+    .box, .small-box {
+        box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+        border-radius: 7px;
+    }
+
+    .bg-yellow {
+        background-color: #f39c12 !important;
+        color: #fff !important;
+    }
+
+    .bg-red {
+        background-color: #dd4b39 !important;
+        color: #fff !important;
+    }
+
+    .small-box img {
+        height: 83px !important;
+    }
+
+    .small-box img:hover {
+        @*box-shadow: -5px 5px 10px 1px #000;*@
+        position: relative;
+        top: -8px;
+        left: -8px;
+    }
+    .small-box:hover {
+        box-shadow: -5px 5px 10px 1px #000;
+    }
+</style>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+
+            <div class="small-box bg-aqua" onclick="location.href='/IssueBookTables/IssueBooks'">
+                <div class="inner">
+                    <h3 class="ng-binding">@ViewBag.IssueBooks | @ViewBag.ReserveBooks</h3>
+                    <p>Issued | Reserve Books</p>
+                </div>
+                <div class="icon">
+                    <img src="~/Content/Dashboard/images/open-book.png" />
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+
+            <div class="small-box bg-green" onclick="location.href='/IssueBookTables/ReturnPendingBooks'">
+                <div class="inner">
+                    <h3 class="ng-binding">@ViewBag.ReturnPendingBooks</h3>
+                    <p>Return Pending Books</p>
+                </div>
+                <div class="icon">
+                    <img src="~/Content/Dashboard/images/book.png" />
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+
+            <div class="small-box bg-yellow" onclick="location.href='/ReturnBooks/Index'">
+                <div class="inner">
+                    <h3 class="ng-binding">@ViewBag.Returnbooks</h3>
+                    <p>Total Return Books</p>
+                </div>
+                <div class="icon">
+                    <img src="~/Content/Dashboard/images/return-book.png" />
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+
+            <div class="small-box bg-red" onclick="location.href='/BookFine/FineHistory'">
+                <div class="inner">
+                    <h3 class="ng-binding">@ViewBag.Fine <sup style="font-size: 9px;top: -3em;">INR</sup></h3>
+                    <p>Fine Collected</p>
+                </div>
+                <div class="icon">
+                    <img src="~/Content/Dashboard/images/money.png" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div id="chartContainer" class="img-responsive"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto;"><canvas class="canvasjs-chart-canvas" width="836" height="500" style="width: 669px; height: 400px; position: absolute;"></canvas><canvas class="canvasjs-chart-canvas" width="836" height="500" style="width: 669px; height: 400px; position: absolute; cursor: default;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; display: none; border-radius: 5px; left: 347px; bottom: -78px;"><div style="width: auto; height: auto; min-width: 50px; margin: 0px; padding: 5px; font-family: Calibri, Arial, Georgia, serif; font-weight: normal; font-style: italic; font-size: 14px; color: black; text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px; text-align: left; border: 2px solid rgb(134, 180, 2); background: rgba(255, 255, 255, 0.9); text-indent: 0px; white-space: nowrap; border-radius: 5px; user-select: none;"><span style="color:#86B402;">Architecture of Italy:</span>&nbsp;&nbsp;1</div></div></div></div>
+
+
+    </div>
+</section>
+
+
+<!-- About Us Page -->
+
+<style>
+    .content-wrapper {
+        text-align: center;
+        padding-bottom: 35px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .content-wrapper h2 {
+            font-size: 2.5rem;
+            color: #000;
+            font-family: Roboto Condensed,sans-serif;
+            font-weight: 700;
+        }
+
+    p.introduction {
+        color: #000;
+        font-family: Roboto,sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.4;
+    }
+</style>
+
+<div class="content-wrapper">
+    <h2>About the Library</h2>
+    <p class="introduction">We inspire and enable independent minds, providing resources, spaces and technologies.</p>
+</div>
+
+<style>
+    .box-featured__wrapper {
+        display: flex;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .box-featured {
+        flex-direction: column;
+        margin-bottom: 2rem;
+        @*background-color: #fff;*@
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+    }
+    img.box-featured__thumb-image {
+        height: auto;
+        max-width: 100%;
+    }
+    .box-featured__thumb-image {
+        width: 100%;
+    }
+    .box-featured__blurb {
+        padding: 1.25rem 1.25rem 0.25rem;
+    }
+    .box-featured__heading {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-top: 0;
+        max-width: 75ch;
+        color: #006dae;
+        font-weight: 800;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .box-featured__description {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        color: #505050;
+        font-size: 14px;
+    }
+    a.box-featured__heading-link {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-top: 0;
+        max-width: 75ch;
+        color: #006dae;
+        font-weight: 800;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+
+<div class="row box-featured__group top-gap--standard bottom-gap--standard">
+    <!-- Feature Box 1: Show -->
+    <!-- Feature Box 1 Type: Content (Single) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="box-featured">
+            <a href="https://www.monash.edu/library/about/about-library/glance" class="box-featured__thumb-link">
+                <img loading="lazy"
+                     srcset="https://www.monash.edu/__data/assets/image/0007/859678/about-us-at-glance.jpg w,
+                                        https://www.monash.edu/__data/assets/image/0007/859678/about-us-at-glance.jpg w,
+                                        https://www.monash.edu/__data/assets/image/0007/859678/about-us-at-glance.jpg w"
+                     sizes="(min-width:75em) 15vw,
+                                            (min-width:60em) and (max-width:75em) 30vw,
+                                            (max-width:60em) 35vw"
+                     src="https://www.monash.edu/__data/assets/image/0007/859678/about-us-at-glance.jpg" alt="About Monash University libraries" class="box-featured__thumb-image" />
+            </a>
+
+            <div class="box-featured__blurb">
+                <h2 class="box-featured__heading"><a href="https://www.monash.edu/library/about/about-library/glance" class="box-featured__heading-link">Library at a glance</a></h2>
+                <p class="box-featured__description">What makes our service great? Helping you find, analyse, use and manage knowledge – fast.</p>
+                <!-- /.box-featured__blurb -->
+            </div>
+
+            <!-- /.box-featured -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+    <!-- selection content-single -->
+    <!-- Feature Box 2: Show -->
+    <!-- Feature Box 2 Type: Content (Single) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="box-featured">
+            <a href="https://www.monash.edu/library/about/about-library/library-at-a-timeline" class="box-featured__thumb-link">
+                <img loading="lazy"
+                     srcset="https://www.monash.edu/__data/assets/image/0008/1097360/1968a.jpg w,
+                                    https://www.monash.edu/__data/assets/image/0008/1097360/1968a.jpg w,
+                                    https://www.monash.edu/__data/assets/image/0008/1097360/1968a.jpg w"
+                     sizes="(min-width:75em) 15vw,
+                                        (min-width:60em) and (max-width:75em) 30vw,
+                                        (max-width:60em) 35vw"
+                     src="https://www.monash.edu/__data/assets/image/0008/1097360/1968a.jpg" alt="" class="box-featured__thumb-image" style="height: 248.21px;" />
+            </a>
+            <div class="box-featured__blurb">
+                <h2 class="box-featured__heading"><a href="https://www.monash.edu/library/about/about-library/library-at-a-timeline" class="box-featured__heading-link">History of the Library: a timeline</a></h2>
+                <p class="box-featured__description">In 1960 we started in a room in the Vice-Chancellor’s house. Today we’re the bedrock of learning, teaching and research.</p>
+                <!-- /.box-featured__blurb -->
+            </div>
+
+            <!-- /.box-featured -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+    <!-- selection content-single -->
+    <!-- Feature Box 3: Show -->
+    <!-- Feature Box 3 Type: Content (Double) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="row box-featured__nest">
+            <div class="col-xs-12 box-featured__wrapper">
+                <div class="box-featured">
+                    <div class="box-featured__blurb">
+                        <h2 class="box-featured__heading">
+                            @Html.ActionLink("Contact us", "Contact", "Home", null, new { @class = "box-featured__heading-link" })
+                        </h2>
+                        <p class="box-featured__description">
+                            <ul>
+                                <li>
+                                    <a href="https://www.monash.edu/library/contact/details">General enquiries</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.monash.edu/library/contact/find-a-librarian">Find a librarian</a>
+                                </li>
+                            </ul>
+                        </p>
+                        <!-- /.box-featured__blurb -->
+                    </div>
+
+                    <!-- /.box-featured -->
+                </div>
+                <!-- /.box-featured__wrapper -->
+            </div>
+            <div class="col-xs-12 box-featured__wrapper">
+                <div class="box-featured">
+                    <div class="box-featured__blurb">
+                        <h2 class="box-featured__heading"><a href="https://www.monash.edu/library/about/about-library/charter" class="box-featured__heading-link">Customer Service Charter</a></h2>
+                        <p class="box-featured__description">Consistent, high-quality customer service when you are looking for resources, professional advice or support.</p>
+                        <!-- /.box-featured__blurb -->
+                    </div>
+
+                    <!-- /.box-featured -->
+                </div>
+                <!-- /.box-featured__wrapper -->
+            </div>
+            <!-- /.box-featured__nest -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+    <!-- selection content-double -->
+    <!-- /.box-featured__group -->
+</div>
+
+<div class="row box-featured__group top-gap--standard bottom-gap--standard ">
+    <!-- Feature Box 1: Show -->
+    <!-- Feature Box 1 Type: Content (Single) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="box-featured">
+            <a href="https://www.monash.edu/library/subject-resources/teaching-tools/rsd" class="box-featured__thumb-link">
+                <img loading="lazy"
+                     srcset="https://www.monash.edu/__data/assets/image/0011/1366886/varieties/feature.box.jpg 360w,
+                                        https://www.monash.edu/__data/assets/image/0011/1366886/varieties/banner.static.medium.jpg 571w,
+                                        https://www.monash.edu/__data/assets/image/0011/1366886/varieties/banner.static.jpg 872w"
+                     sizes="(min-width:75em) 15vw,
+                                            (min-width:60em) and (max-width:75em) 30vw,
+                                            (max-width:60em) 35vw"
+                     src="https://www.monash.edu/__data/assets/image/0011/1366886/varieties/feature.box.jpg" alt="Simulated training lab" class="box-featured__thumb-image" />
+            </a>
+
+            <div class="box-featured__blurb">
+                <h2 class="box-featured__heading"><a href="https://www.monash.edu/library/subject-resources/teaching-tools/rsd" class="box-featured__heading-link">Research skills development</a></h2>
+                <p class="box-featured__description">Students need higher-order skills for their future career success. We work with academic staff to include library research skills in curricula.</p>
+                <!-- /.box-featured__blurb -->
+            </div>
+
+            <!-- /.box-featured -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+
+
+    <!-- selection content-single -->
+    <!-- Feature Box 2: Show -->
+    <!-- Feature Box 2 Type: Content (Single) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="box-featured">
+            <a href="https://www.monash.edu/library/researchers/data-collection-management" class="box-featured__thumb-link">
+                <img loading="lazy"
+                     srcset="https://www.monash.edu/__data/assets/image/0008/859688/about-us-infraestructure.jpg w,
+                                    https://www.monash.edu/__data/assets/image/0008/859688/about-us-infraestructure.jpg w,
+                                    https://www.monash.edu/__data/assets/image/0008/859688/about-us-infraestructure.jpg w"
+                     sizes="(min-width:75em) 15vw,
+                                        (min-width:60em) and (max-width:75em) 30vw,
+                                        (max-width:60em) 35vw"
+                     src="https://www.monash.edu/__data/assets/image/0008/859688/about-us-infraestructure.jpg" alt="Infrastructure at Monash University Library" class="box-featured__thumb-image" />
+            </a>
+            <div class="box-featured__blurb">
+                <h2 class="box-featured__heading"><a href="https://www.monash.edu/library/researchers/data-collection-management" class="box-featured__heading-link">Research data management</a></h2>
+                <p class="box-featured__description">Making data easier to find and re-use, and providing you with tools needed for 21st century research, is what we do.</p>
+                <!-- /.box-featured__blurb -->
+            </div>
+
+            <!-- /.box-featured -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+
+
+    <!-- selection content-single -->
+    <!-- Feature Box 3: Show -->
+    <!-- Feature Box 3 Type: Content (Single) -->
+    <!--Custom-->
+    <div class="col-xs-12 col-md-4 box-featured__wrapper">
+        <div class="box-featured">
+            <div class="box-featured__thumb-wrapper">
+                <img loading="lazy"
+                     srcset="https://www.monash.edu/__data/assets/image/0010/1366876/varieties/feature.box.jpg 360w,
+                                    https://www.monash.edu/__data/assets/image/0010/1366876/varieties/banner.static.medium.jpg 571w,
+                                    https://www.monash.edu/__data/assets/image/0010/1366876/varieties/banner.static.jpg 872w"
+                     sizes="(min-width:75em) 15vw,
+                                        (min-width:60em) and (max-width:75em) 30vw,
+                                        (max-width:60em) 35vw"
+                     src="https://www.monash.edu/__data/assets/image/0010/1366876/varieties/feature.box.jpg" alt="Female student reading" class="box-featured__thumb-image" />
+            </div>
+            <div class="box-featured__blurb">
+                <h2 class="box-featured__heading">
+                    Collections
+                </h2>
+                <p class="box-featured__description">
+                    <li><a href="https://www.monash.edu/library/collections/strengths">Collections strengths</a></li>
+                    <li><a href="https://www.monash.edu/library/about/hathitrust-membership">HathiTrust</a></li>
+                </p>
+                <!-- /.box-featured__blurb -->
+            </div>
+
+            <!-- /.box-featured -->
+        </div>
+        <!-- /.box-featured__wrapper -->
+    </div>
+
+
+
+
+    <!-- selection content-single -->
+    <!-- /.box-featured__group -->
+</div>
+
+
+<style>
+
+    .box-featured__horizontal {
+        margin-bottom: 20px;
+        margin-top: 0;
+        min-height: 80px;
+        position: relative;
+    }
+
+        .box-featured__horizontal .box-featured__linkshadow {
+            display: flex;
+            height: 161px;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .3s ease;
+        }
+
+            .box-featured__horizontal .box-featured__linkshadow:hover {
+                box-shadow: -5px 5px 3px rgb(0 0 0 / 12%), -4px 5px 2px rgb(0 0 0 / 24%);
+            }
+
+        .box-featured__horizontal .box-featured__thumb-image {
+            display: flex;
+            height: 161px;
+            max-width: 255px;
+            width: 100%;
+            min-width: 255px;
+        }
+
+            .box-featured__horizontal .box-featured__thumb-image img {
+                min-height: 80px;
+                min-width: 126px;
+                display: block;
+                width: 100%;
+            }
+
+        .box-featured__horizontal .box-featured__blurb {
+            flex-grow: 1;
+            justify-content: left;
+            max-width: 100%;
+            min-height: auto;
+            overflow: hidden;
+            padding: 1.5rem;
+            text-overflow: ellipsis;
+        }
+
+            .box-featured__horizontal .box-featured__blurb h3 {
+                font-size: 1.2rem;
+                line-height: 1.2;
+                margin-top: 0;
+                max-width: 75ch;
+                color: #006dae;
+                font-weight: 800;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .box-featured__horizontal .box-featured__blurb p {
+                -webkit-line-clamp: 4;
+                display: -webkit-box;
+                margin: 0;
+                overflow: hidden;
+                color: #505050;
+                font-size: 14px;
+                max-width: 115ch;
+                text-decoration: none;
+                padding-top: 12px;
+                height: auto;
+                visibility: visible;
+            }
+</style>
+
+
+<div class="box-featured__horizontal">
+    <a href="https://www.monash.edu/library/new-generation-libraries/home" class="box-featured__linkshadow" data-click-event="monash.featurebox.click" data-position="0" data-total-results="1" data-title="Research and learning environments" data-type="horizontal">
+
+        <div class="box-featured__thumb-image">
+            <img src="https://www.monash.edu/__data/assets/image/0004/859693/about-us-research-learning.jpg"
+                 alt="" />
+        </div>
+        <div class="box-featured__blurb">
+            <h3 class="color-base-monash-blue">
+                Research and learning environments
+            </h3>
+            <p>Today’s scholars demand libraries that meet changing styles, which is why we design our libraries to inspire you to achieve your goals.</p>
+        </div>
+    </a>
+</div>
+

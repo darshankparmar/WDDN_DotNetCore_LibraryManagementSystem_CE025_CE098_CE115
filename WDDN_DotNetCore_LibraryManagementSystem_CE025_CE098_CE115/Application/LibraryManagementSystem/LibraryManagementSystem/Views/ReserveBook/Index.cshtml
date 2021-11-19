@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DatabaseLayer.BookTable>
+
+@{
+    ViewBag.Title = "All Book";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Book List</h6>
+        <h4 class="text-info">@ViewBag.Message</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Book Title
+                        </th>
+                        <th>
+                            Short Description
+                        </th>
+                        <th>
+                            Author
+                        </th>
+                        <th>
+                            Book Name
+                        </th>
+                        <th>
+                            Edition
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Book Category
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShortDescription)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Edition)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookTypeTable.Name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Reserve Book", "ReserveBook", new { id = item.BookID }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
